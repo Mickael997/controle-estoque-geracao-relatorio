@@ -34,22 +34,26 @@ object dtmVenda: TdtmVenda
     Params = <>
     Left = 136
     Top = 16
-    object QryProdutosprodutoId: TIntegerField
+    object QryProdutosprodutoId: TZIntegerField
       FieldName = 'produtoId'
       ReadOnly = True
     end
-    object QryProdutosnome: TWideStringField
-      DisplayLabel = 'Nome'
+    object QryProdutosnome: TZUnicodeStringField
       FieldName = 'nome'
+      ReadOnly = True
       Size = 60
     end
-    object QryProdutosvalor: TFloatField
-      DisplayLabel = 'Valor'
+    object QryProdutosvalor: TZFMTBCDField
       FieldName = 'valor'
+      ReadOnly = True
+      Precision = 18
+      Size = 5
     end
-    object QryProdutosquantidade: TFloatField
-      DisplayLabel = 'Quantidade'
+    object QryProdutosquantidade: TZFMTBCDField
       FieldName = 'quantidade'
+      ReadOnly = True
+      Precision = 18
+      Size = 5
     end
   end
   object cdsItensVenda: TClientDataSet

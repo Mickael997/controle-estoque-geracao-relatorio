@@ -15,7 +15,6 @@ type
     QryListagemclienteId: TIntegerField;
     QryListagemnome: TWideStringField;
     QryListagemdataVenda: TDateTimeField;
-    QryListagemtotalVenda: TFloatField;
     edtVendaId: TLabeledEdit;
     lkpCliente: TDBLookupComboBox;
     Label1: TLabel;
@@ -39,6 +38,7 @@ type
     btnApagarItem: TBitBtn;
     Label7: TLabel;
     Label8: TLabel;
+    QryListagemtotalVenda: TZFMTBCDField;
     procedure FormCreate(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure dbGridItensVendaKeyDown(Sender: TObject; var Key: Word;

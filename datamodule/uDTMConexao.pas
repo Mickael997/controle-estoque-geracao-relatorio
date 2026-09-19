@@ -14,6 +14,7 @@ type
     QryScriptVendas: TZQuery;
     QryScriptItensVendas: TZQuery;
     QryScriptUsuarios: TZQuery;
+    procedure ConexaoDBAfterConnect(Sender: TObject);
   private
     { Private declarations }
   public
@@ -28,5 +29,10 @@ implementation
 {%CLASSGROUP 'Vcl.Controls.TControl'}
 
 {$R *.dfm}
+
+procedure TdtmPrincipal.ConexaoDBAfterConnect(Sender: TObject);
+begin
+  // Deixe vazio ou coloque comandos que devem rodar após conectar
+end;
 
 end.

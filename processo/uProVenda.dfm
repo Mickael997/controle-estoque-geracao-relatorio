@@ -370,6 +370,7 @@ inherited frmProVenda: TfrmProVenda
     end
     inherited btnNavigator: TDBNavigator
       Hints.Strings = ()
+      StyleElements = [seFont, seClient, seBorder]
     end
   end
   inherited QryListagem: TZQuery
@@ -403,10 +404,11 @@ inherited frmProVenda: TfrmProVenda
       FieldName = 'dataVenda'
       Required = True
     end
-    object QryListagemtotalVenda: TFloatField
-      DisplayLabel = 'Total da Venda'
+    object QryListagemtotalVenda: TZFMTBCDField
       FieldName = 'totalVenda'
-      Required = True
+      ReadOnly = True
+      Precision = 18
+      Size = 5
     end
   end
   inherited dtsListagem: TDataSource

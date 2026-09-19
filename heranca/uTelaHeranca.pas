@@ -144,6 +144,7 @@ begin
 
 end;
 
+
 procedure TfrmTelaHeranca.LimparEdits;
 Var i:Integer;
 begin
@@ -289,7 +290,6 @@ procedure TfrmTelaHeranca.grdListagemDblClick(Sender: TObject);
 begin
   btnAlterar.Click;
 end;
-
 procedure TfrmTelaHeranca.grdListagemKeyDown(Sender: TObject; var Key: Word;
   Shift: TShiftState);
 begin

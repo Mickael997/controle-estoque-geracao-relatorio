@@ -13,10 +13,6 @@ type
     QryClientenome: TWideStringField;
 
     QryProdutos: TZQuery;
-    QryProdutosprodutoId: TIntegerField;
-    QryProdutosnome: TWideStringField;
-    QryProdutosvalor: TFloatField;
-    QryProdutosquantidade: TFloatField;
 
     cdsItensVenda: TClientDataSet;
     dtsItensVenda: TDataSource;
@@ -28,6 +24,10 @@ type
     cdsItensVendavalorUnitario: TFloatField;
     cdsItensVendavalorTotalProduto: TFloatField;
     cdsItensVendaNomeProduto: TStringField;
+    QryProdutosprodutoId: TZIntegerField;
+    QryProdutosnome: TZUnicodeStringField;
+    QryProdutosvalor: TZFMTBCDField;
+    QryProdutosquantidade: TZFMTBCDField;
 
     procedure DataModuleCreate(Sender: TObject);
     procedure DataModuleDestroy(Sender: TObject);
@@ -61,5 +61,7 @@ begin
   QryCliente.Close;
   QryProdutos.Close;
 end;
+
+
 
 end.

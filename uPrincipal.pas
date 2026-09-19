@@ -123,18 +123,6 @@ end;
 
 procedure TfrmPrincipal.FormCreate(Sender: TObject);
 begin
-{
-  dtmPrincipal := TdtmPrincipal.Create(Self);
-  dtmPrincipal.ConexaoDB.SQLHourGlass:=True;
-  dtmPrincipal.ConexaoDB.Protocol :='mssql';
-  dtmPrincipal.ConexaoDB.LibraryLocation :='C:\ProjetoDelphi\ntwdblib.dll';
-  dtmPrincipal.ConexaoDB.HostName := '.\SQLEXPRESS';
-  dtmPrincipal.ConexaoDB.Port :=1433;
-  dtmPrincipal.ConexaoDB.User := 'vendasADM';
-  dtmPrincipal.ConexaoDB.Password := 'SenhaForte@2025';
-  dtmPrincipal.ConexaoDB.Database := 'vendas';
-  dtmPrincipal.ConexaoDB.Connected:=True;
-}
 
   frmAtualizaDB:=TfrmAtualizaDB.Create(Self);
   frmAtualizaDB.Show;
@@ -143,17 +131,26 @@ begin
   dtmPrincipal := TdtmPrincipal.Create(Self);
   with dtmPrincipal.ConexaoDB do
   begin
-    SQLHourGlass:=False;
-    Protocol :='mssql';
-    LibraryLocation :='C:\ProjetoDelphi\ntwdblib.dll';
+    Connected := False; // Garante que começa desligado para aceitar os parâmetros
+    SQLHourGlass := False;
+    Protocol := 'ado';
+
+    // Injeta as diretivas de compatibilidade do ADO do Windows
+    Properties.Clear;
+    Properties.Add('DisableDirectBCD=True');
+    Properties.Add('AutoCommit=true');
+
+    Database := 'Provider=MSOLEDBSQL;Data Source=.\SQLEXPRESS;Initial Catalog=vendas';
     HostName := '.\SQLEXPRESS';
-    Port :=1433;
+    Port := 1433;
     User := 'vendasADM';
     Password := 'SenhaForte@2025';
-    Database := 'vendas';
+
+    // Deixando em formato padrão para o driver ADO não travar as consultas
     AutoCommit := True;
-    TransactIsolationLevel:=tiReadCommitted;
-    Connected:=True;
+    TransactIsolationLevel := tiNone;
+
+    Connected := True;
   end;
   AtualizacaoBancoDados(frmAtualizaDB);
   frmAtualizaDB.Free;
