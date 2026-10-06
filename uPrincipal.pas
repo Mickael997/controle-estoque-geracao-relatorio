@@ -246,36 +246,6 @@ begin
        FreeAndNil(oAtualizarMSSQL);
   end;
 
-{  DtmPrincipal.QryScriptCategorias.ExecSQL;
-  aForm.chkCategoria.Checked := true;
-  aForm.Refresh;
-  Sleep(50);
-
-  DtmPrincipal.QryScriptProdutos.ExecSQL;
-  aForm.chkProduto.Checked := true;
-  aForm.Refresh;
-  Sleep(50);
-
-  DtmPrincipal.QryScriptClientes.ExecSQL;
-  aForm.chkCliente.Checked := true;
-  aForm.Refresh;
-  Sleep(50);
-
-  DtmPrincipal.QryScriptVendas.ExecSQL;
-  aForm.chkVendas.Checked := true;
-  aForm.Refresh;
-  Sleep(50);
-
-  DtmPrincipal.QryScriptItensVendas.ExecSQL;
-  aForm.chkItensVenda.Checked := true;
-  aForm.Refresh;
-  Sleep(50);
-
-  DtmPrincipal.QryScriptUsuarios.ExecSQL;
-  aForm.chkUsuarios.Checked := true;
-  aForm.Refresh;
-  Sleep(50);  }
-
 end;
 
 end.
