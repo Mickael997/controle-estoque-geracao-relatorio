@@ -33,7 +33,8 @@ uses
   cUsuarioLogado in 'login\cUsuarioLogado.pas',
   cCadUsuario in 'classes\cCadUsuario.pas',
   cAtualizacaoBancoDeDados in 'classes\cAtualizacaoBancoDeDados.pas',
-  cAtualizacaoTabelaMSSQL in 'classes\cAtualizacaoTabelaMSSQL.pas';
+  cAtualizacaoTabelaMSSQL in 'classes\cAtualizacaoTabelaMSSQL.pas',
+  cAtualizacaoCampoMSSQL in 'classes\cAtualizacaoCampoMSSQL.pas';
 
 {$R *.res}
 

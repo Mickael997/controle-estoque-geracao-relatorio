@@ -34,7 +34,7 @@ End;
 
 implementation
 
-uses cAtualizacaoTabelaMSSQL;
+uses cAtualizacaoTabelaMSSQL, cAtualizacaoCampoMSSQL;
 
 
 { TAtualizaBancoDados }
@@ -69,6 +69,7 @@ end;
 function TAtualizaBancoDadosMSSQL.AtualizarBancoDeDadosMSSQL: Boolean;
 var oAtualizarDB:TAtualizaBancoDados;
     oTabela: TAtualizacaoTabelaMSSQL;
+    oCampo:  TAtualizacaoCampoMSSQL;
 begin
   Try
      //Classe Principal de Atualização
@@ -76,6 +77,7 @@ begin
 
      //Classe Filha(Herança) de Atualização
      oTabela      := TAtualizacaoTabelaMSSQL.Create(ConexaoDB);
+     oCampo       := TAtualizacaoCampoMSSQL.Create(ConexaoDB);
 
   Finally
      if Assigned(oAtualizarDB) then
